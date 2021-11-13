@@ -1,0 +1,45 @@
+* {
+    font-family: "Times New Roman", Times, serif;
+    color: white;
+}
+
+#parent_div {
+    
+    background-image: url('slide.jpg');
+    background-color: black;
+    opacity: 1;
+    
+   }
+
+#parent_div{
+    padding-top: 20px;
+
+
+}
+b {
+    text-align: left!important;
+}
+
+.labels{
+
+    text-align:left!important;
+}
+.pass {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.pass input {
+    outline: none;
+    border: 0.5px solid lightgray;
+    border-radius: 5px;
+    height: 40px;
+    padding: 10px 10px;
+}
+.pass input:focus {
+    border: 2px solid lightskyblue;
+}
+
+.pass input:hover {
+    border: 2px solid rgb(250, 135, 173);
+}

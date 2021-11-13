@@ -1,0 +1,86 @@
+<div id="header" class="modal-header">
+    <!-- <h5 class="modal-title">Eko-Modal title</h5> -->
+    <h2 style="color:white;" class="text-center">Angular Escrow Publish Order</h2>
+    <a type="button" class="close" data-dismiss="modal" (click)="activeModal.close('dismiss')">
+        <div aria-hidden="true">&times;</div>
+    </a>
+</div>
+<div id="parent_div" class="modal-body">
+    <div id='parent_div' class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3.5 mx-auto">
+    
+            <form>
+                
+                <h5 style="color:white;" class="modal-title">Publish a new order to the Orderpool for Sellers</h5>
+                <br>
+                <div class="pass">
+                    <b><label style="color:white;" for="Commodity">Commodity:</label></b>
+                    <!-- <input type="text"  id='Commodity' placeholder="Enter the Commodity"/>
+                    <br> -->
+                  
+                    <div class="dropdown">
+                        <button  type="button" class="col-sm-12 btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                          Commodity
+                        </button>
+                        
+
+                            <div style="background-color: #2C3539;  height:250px;overflow:auto;" class="col-sm-12 dropdown-menu">
+                                <div style="height:300px;">
+
+                                    <a class="dropdown-item"> <app-bitcoin class="crypto_hover" style="max-width: 10px; color:white; max-height: 10px;"></app-bitcoin></a>
+                                    <a class="dropdown-item"><app-ethereum class="crypto_hover" style="max-width: 10px; color:white; max-height: 10px;"></app-ethereum></a>
+                                    <a class="dropdown-item"><app-uniswap class="crypto_hover" style="max-width: 10px; color:white; max-height: 10px;"></app-uniswap></a>
+                                    <a class="dropdown-item"> <app-bnb class="crypto_hover" style="max-width: 10px; color:white; max-height: 10px;"></app-bnb></a>
+                                    <a class="dropdown-item"><app-litecoin class="crypto_hover" style="max-width: 10px; color:white; max-height: 10px;"></app-litecoin></a>
+                                    <a class="dropdown-item"><app-pi class="crypto_hover" style="max-width: 10px; color:white; max-height: 10px;"></app-pi></a>
+                                    <a class="dropdown-item"> <app-bundle class="crypto_hover" style="max-width: 10px; color:white; max-height: 10px;"></app-bundle></a>
+                                    <a class="dropdown-item"> <app-bch class="crypto_hover" style="max-width: 10px; color:white; max-height: 10px;"></app-bch></a>
+          
+                                    <!-- <a class="dropdown-item"> <app-bitcoin style="max-width: 10px; max-height: 10px;"></app-bitcoin></a>
+                                    <a class="dropdown-item"><app-ethereum style="max-width: 10px; max-height: 10px;"></app-ethereum></a>
+                                    <a class="dropdown-item"><app-uniswap style="max-width: 10px; max-height: 10px;"></app-uniswap></a>
+                                    <a class="dropdown-item"> <app-bnb style="max-width: 10px; max-height: 10px;"></app-bnb></a>
+                                    <a class="dropdown-item"><app-litecoin style="max-width: 10px; max-height: 10px;"></app-litecoin></a>
+                                    <a class="dropdown-item"><app-pi style="max-width: 10px; max-height: 10px;"></app-pi></a>
+                                    <a class="dropdown-item"> <app-bundle style="max-width: 10px; max-height: 10px;"></app-bundle></a>
+                                    <a class="dropdown-item"> <app-bch style="max-width: 10px; max-height: 10px;"></app-bch></a> -->
+
+                                </div>
+                                
+                       
+                              </div>
+                   
+                        
+                      </div>
+                    
+                </div>
+    
+                <div class="pass">
+                    <b><label style="color:white;" for="Quantity">Quantity:</label></b>
+                    <input type="text"  id='Quantity' placeholder="Enter your Quantity"/>
+                    <br>
+                    
+                </div>
+    
+                <div class="pass">
+                    <b><label style="color:white;" for="Price">Price:</label></b>
+                    <input type="text"  id='Price' placeholder="Enter your Price"/>
+                    <br>
+                    
+                </div>
+    
+                <input style="min-width: 200px;" type="submit" class="btn btn-primary text-center" value="Publish order">
+                    <br>
+              
+            </form>
+            </div>
+        </div>
+    
+    </div>
+</div>
+<div style="background-color: #2C3539;" class="modal-footer">
+    <p style="color:white;" class="modal-title">Note that your Order Expires and is Purged from Orderpool after 24hrs</p>
+    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal"
+        (click)="activeModal.close('close')">Close</button> -->
+</div>

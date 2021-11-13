@@ -1,0 +1,99 @@
+<div id='parent_div' class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 ">
+            <div>
+                 
+                <div class="bin">
+                    <h2 style="padding-left:20px;color:white;">Angular Cryptocurrency Escrow Order Pool</h2>
+                    <br>
+                    <div class="container-fluid pass">
+
+                        <div class="row">
+
+                            <div class="col-sm-4">
+                                <input class="form-control" style="color: black; " type="text"  id='trans_code' placeholder="Search Orderpool" />
+
+                            </div>
+
+                            <div >
+                                <!-- <img src="slide.jpg" class="img-fluid" alt=""> -->
+
+                            </div>
+
+                            <div class="col-sm-4">
+                                
+                                
+                                <select style="max-width: 450px;" class="form-control" >
+                                    <option>Commodity</option>
+                                    <option>Order ID</option>
+                                    <option>Quantity</option>
+                                    <option>Price</option>
+                                </select>
+
+                            </div>
+                            
+  
+                        </div>
+                        
+                    </div>
+ 
+                    <div style="padding-left:20px; max-height: 500px; overflow: auto; opacity:0.8;">
+                        <table style=" min-width:1500px; height: 600px; " class="table table-dark table-striped table-bordered ">
+                            <thead style="background-color:#2C3539;color:white;">
+    
+                                <th>
+                                    S/N
+                                </th>
+                                <th>
+                                    Order ID
+                                </th>
+                                <th style="color: white; text-align: left;">
+                                    Commodity
+                                </th>
+                                <th>
+                                    Quantity
+                                </th>
+                                <th>
+                                    Price
+                                </th>
+                                
+                                <th>
+                                    Expires
+                                </th>
+                                <th>
+                                    Action
+                                </th>
+                            </thead>
+                            <tbody>
+                               
+                                   <tr *ngFor="let order of orders; let i=index;">
+                                        <td>{{i+1}}</td>
+                                        <td><a class="no_dec_sm"  href="#"> 
+                                            <div class="no_exp">{{order.order_id}}</div></a>
+                                       
+                                        </td>
+                                        
+                                        <td><a class="no_dec" style="color: white; text-align: left;" href=""><app-ethereum></app-ethereum></a></td>
+                                        <td>{{order.qty}}</td>
+                                        <td>{{order.price}}</td>
+                                        <td>{{order.expire}}</td>
+                                        <td><input type="button" value="Reserve order" class="btn btn-success "/></td>
+                                    </tr>
+
+                                   
+                            
+                            </tbody>
+
+                        </table>
+  
+                    </div>
+                    
+                </div>
+
+            </div>
+        
+        </div>
+    </div>
+
+</div>
+

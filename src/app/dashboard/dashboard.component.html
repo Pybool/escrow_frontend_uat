@@ -1,0 +1,411 @@
+<div style=" min-height: 600px;" id='parent_div' class="container-fluid">
+    <div class="row">
+        <!-- <div class="col-sm-6 mx-auto "> center of screen -->
+        <div class="col-sm-4 ">
+
+        <form>
+            <h2 class="text-left">Angular Escrow Buyer's Dashboard</h2>
+
+            <br>
+            <b><p style="color:white;">Generate Transaction token for seller</p></b>
+
+
+            <div class="pass">
+                <input style="color: black;" type="text"  id='trans_code' placeholder="Transaction token"  />
+            </div>
+          
+            <input style="max-width:197px;" type="button" class="btn btn-primary text-center" id="gen_trans" value="Generate Transaction Token" >&nbsp;&nbsp;
+            
+
+            <!-- <b><label class="" for="Buyer">Buyer:</label></b>&nbsp;&nbsp; -->
+            
+            <input  style="max-width:177px;" type="submit" class="btn btn-success text-center" id="Buyer" value="Confirm Seller Service" disabled/>&nbsp;&nbsp;
+            <input  style="width:85px;"  type="submit" class="btn btn-danger text-center" id="Buyer" value="Report" />
+            <br>
+            <br>
+            <div class="pass">
+                <b><label style="color:white;" for="seller">Seller Public Id:</label></b>
+                <input type="text" style="color: black;"  id='seller' placeholder="Enter seller public id" required/>
+            
+            </div>
+            
+            <div>
+
+                <input  type="submit" style="width:232px;" class="btn btn-primary text-center"  value="Send transaction code"/>&nbsp;&nbsp;
+                <input routerLink="payment" type="submit" style="width:232px;" class="btn btn-primary text-center" id="Buyer" value="Transfer Funds to Escrow" disabled/>
+                <a routerLink="payment">pay</a>
+                    <br>
+
+                </div>
+            <br>
+            
+            
+
+                <p>Please note you have a maximum of 20 minutes to confirm or report the seller's service after which the seller will be paid.</p>
+
+            <!-- <div class="pass">
+                <b><label for="seller">Seller Account details:</label></b>
+                <input type="text"  id='seller' placeholder="Enter Bankname"/>
+                <br>
+                <input type="text"  id='seller' placeholder="Enter Account number"/>
+            </div> -->
+            
+        </form>
+
+        </div>
+        <div class="col-sm-8 mx-auto">
+            <div class="container">
+                <div style="padding-left: 20px;" class="row">
+                    <!-- <div class="col-sm-6 mx-auto "> center of screen -->
+                    <div>
+                         <h2><a style="color:orange;" href="">Pending Transactions</a></h2>
+                    </div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <div>
+                        <h2><a href="">Completed Transactions</a></h2>
+                   </div>
+                   &nbsp;&nbsp;&nbsp;&nbsp;
+                   <div>
+                    <h2><input type="button" value="+ New public order" class="btn btn-success " (click)="openModal()"/></h2>
+                   </div>
+                   <!-- <div class="container">
+                    <div class="row">
+                      <div class="col text-center">
+                        <button class="btn btn-lg btn-outline-primary" (click)="openModal()">Launch demo modal</button>
+                      </div>
+                    </div>
+                  </div> -->
+
+                </div>
+            </div>
+            
+            <br>
+     
+            <div style="padding-left:20px; max-height: 500px; overflow: auto; opacity:0.7;">
+                        <table style=" min-width:200px; height: 600px;" class="table table-dark table-striped  ">
+                            <thead style="background-color:#2C3539;color:white;">
+    
+                                <th>
+                                    S/N
+                                </th>
+                                <th>
+                                    Order ID
+                                </th>
+                                <th>
+                                    Role
+                                </th>
+                                <th>
+                                    C/Party
+                                </th>
+                                <th>
+                                    Commodity
+                                </th>
+                                <th>
+                                    Quantity
+                                </th>
+                                <th>
+                                    Price
+                                </th>
+                                
+                                <th>
+                                    Date/time
+                                </th>
+                                <!-- <th>
+                                    Type
+                                </th> -->
+                                <!-- <th>
+                                    Time
+                                </th> -->
+                            </thead>
+                            <tbody>
+                               
+                                   <tr>
+                                        <td>1</td> 
+                                        <td>OF-846352424</td>
+                                        <td>Vendor</td>
+                                        <td><a href="#">Demola221</a></td>
+                                        <td><app-ethereum></app-ethereum></td>
+                                        <td>4</td>
+                                        <td>$1000/unit</td>
+                                        <td>16/10/2021:12.23am</td>
+                                        
+                                        
+                                    </tr>
+
+                                    <tr>
+                                        <td>2</td> 
+                                        <td>OF-846352424</td>
+                                        <td>Buyer</td>
+                                        <td><a href="#">Demola22etrtrtrtgrte1</a></td>
+                                        <td><app-bitcoin></app-bitcoin></td>
+                                        <td>1</td>
+                                        <td>$50000/unit</td>
+                                        <td>16/10/2021:12.23am</td>
+                                        
+                                       
+                                    </tr>
+
+                                    <tr>
+                                        <td>3</td> 
+                                        <td>OF-846352424</td>
+                                        <td>Vendor</td>
+                                        <td><a href="#">Yousef318</a></td>
+                                        <td><app-uniswap></app-uniswap></td>
+                                        <td>7</td>
+                                        <td>$103.89/unit</td>
+                                        <td>16/10/2021:12.23am</td>
+                                        
+                                       
+                                    </tr>
+
+                                    <tr>
+                                        <td>2</td> 
+                                        <td>OF-846352424</td>
+                                        <td>Buyer</td>
+                                        <td><a href="#">Demola221</a></td>
+                                        <td><app-bundle></app-bundle></td>
+                                        <td>1</td>
+                                        <td>$50000/unit</td>
+                                        <td>16/10/2021:12.23am</td>
+                                        
+                                       
+                                    </tr>
+
+                                    <tr>
+                                        <td>3</td> 
+                                        <td>OF-846352424</td>
+                                        <td>Vendor</td>
+                                        <td><a href="#">Yousef318</a></td>
+                                        <td><app-uniswap></app-uniswap></td>
+                                        <td>7</td>
+                                        <td>$103.89/unit</td>
+                                        <td>16/10/2021:12.23am</td>
+                                        
+                                       
+                                    </tr>
+
+                                    <tr>
+                                        <td>2</td> 
+                                        <td>OF-846352424</td>
+                                        <td>Buyer</td>
+                                        <td><a href="#">Demola221</a></td>
+                                        <td><app-bitcoin></app-bitcoin></td>
+                                        <td>1</td>
+                                        <td>$50000/unit</td>
+                                        <td>16/10/2021:12.23am</td>
+                                        
+                                       
+                                    </tr>
+
+                                    <tr>
+                                        <td>3</td> 
+                                        <td>OF-846352424</td>
+                                        <td>Buyer</td>
+                                        <td><a href="#">Yousef318</a></td>
+                                        <td><app-bch></app-bch></td>
+                                        <td>7</td>
+                                        <td>$103.89/unit</td>
+                                        <td>16/10/2021:12.23am</td>
+                                       
+                                    </tr>
+
+                                    <tr>
+                                        <td>2</td> 
+                                        <td>OF-846352424</td>
+                                        <td>Vendor</td>
+                                        <td><a href="#">Demola221</a></td>
+                                        <td><app-pi></app-pi></td>
+                                        <td>1</td>
+                                        <td>$50000/unit</td>
+                                        <td>16/10/2021:12.23am</td>
+                                       
+                                    </tr>
+
+                                    <tr>
+                                        <td>3</td> 
+                                        <td>OF-846352424</td>
+                                        <td>Vendor</td>
+                                        <td><a href="#">Yousef318</a></td>
+                                        <td><app-bnb></app-bnb></td>
+                                        <td>7</td>
+                                        <td>$103.89/unit</td>
+                                        <td>16/10/2021:12.23am</td>
+                                       
+                                    </tr>
+
+                                    <tr>
+                                        <td>2</td> 
+                                        <td>OF-846352424</td>
+                                        <td>Buyer</td>
+                                        <td><a href="#">Demola221</a></td>
+                                        <td><app-litecoin></app-litecoin></td>
+                                        <td>1</td>
+                                        <td>$50000/unit</td>
+                                        <td>16/10/2021:12.23am</td>
+                                       
+                                    </tr>
+
+                                    <tr>
+                                        <td>3</td> 
+                                        <td>OF-846352424</td>
+                                        <td>Vendor</td>
+                                        <td><a href="#">Yousef318</a></td>
+                                        <td>Uniswap Token</td>
+                                        <td>7</td>
+                                        <td>$103.89/unit</td>
+                                        <td>16/10/2021:12.23am</td>
+                                       
+                                    </tr>
+                                    <tr>
+                                        <td>2</td> 
+                                        <td>OF-846352424</td>
+                                        <td>Buyer</td>
+                                        <td><a href="#">Demola221</a></td>
+                                        <td>Bitcoin</td>
+                                        <td>1</td>
+                                        <td>$50000/unit</td>
+                                        <td>16/10/2021:12.23am</td>
+                                       
+                                    </tr>
+
+                                    <tr>
+                                        <td>3</td> 
+                                        <td>OF-846352424</td>
+                                        <td>Buyer</td>
+                                        <td><a href="#">Yousef318</a></td>
+                                        <td>Uniswap Token</td>
+                                        <td>7</td>
+                                        <td>$103.89/unit</td>
+                                        <td>16/10/2021:12.23am</td>
+                                       
+                                    </tr>
+                                    <tr>
+                                        <td>2</td> 
+                                        <td>OF-846352424</td>
+                                        <td>Vendor</td>
+                                        <td><a href="#">Demola221</a></td>
+                                        <td>Bitcoin</td>
+                                        <td>1</td>
+                                        <td>$50000/unit</td>
+                                        <td>16/10/2021:12.23am</td>
+                                       
+                                    </tr>
+
+                                    <tr>
+                                        <td>3</td> 
+                                        <td>OF-846352424</td>
+                                        <td>Vendor</td>
+                                        <td><a href="#">Yousef318</a></td>
+                                        <td>Uniswap Token</td>
+                                        <td>7</td>
+                                        <td>$103.89/unit</td>
+                                        <td>16/10/2021:12.23am</td>
+                                       
+                                    </tr>
+                                    <tr>
+                                        <td>2</td> 
+                                        <td>OF-846352424</td>
+                                        <td>Buyer</td>
+                                        <td><a href="#">Demola221</a></td>
+                                        <td>Bitcoin</td>
+                                        <td>1</td>
+                                        <td>$50000/unit</td>
+                                        <td>16/10/2021:12.23am</td>
+                                       
+                                    </tr>
+
+                                    <tr>
+                                        <td>3</td> 
+                                        <td>OF-846352424</td>
+                                        <td>Buyer</td>
+                                        <td><a href="#">Yousef318</a></td>
+                                        <td>Uniswap Token</td>
+                                        <td>7</td>
+                                        <td>$103.89/unit</td>
+                                        <td>16/10/2021:12.23am</td>
+                                       
+                                    </tr>
+                                    <tr>
+                                        <td>2</td> 
+                                        <td>OF-846352424</td>
+                                        <td>Vendor</td>
+                                        <td><a href="#">Demola221</a></td>
+                                        <td>Bitcoin</td>
+                                        <td>1</td>
+                                        <td>$50000/unit</td>
+                                        <td>16/10/2021:12.23am</td>
+                                       
+                                    </tr>
+
+                                    <tr>
+                                        <td>3</td> 
+                                        <td>OF-846352424</td>
+                                        <td>Buyer</td>
+                                        <td><a href="#">Yousef318</a></td>
+                                        <td>Uniswap Token</td>
+                                        <td>7</td>
+                                        <td>$103.89/unit</td>
+                                        <td>16/10/2021:12.23am</td>
+                                       
+                                    </tr>
+                                    <tr>
+                                        <td>2</td> 
+                                        <td>OF-846352424</td>
+                                        <td>Vendor</td>
+                                        <td><a href="#">Demola221</a></td>
+                                        <td>Bitcoin</td>
+                                        <td>1</td>
+                                        <td>$50000/unit</td>
+                                        <td>16/10/2021:12.23am</td>
+                                       
+                                    </tr>
+
+                                    <tr>
+                                        <td>3</td> 
+                                        <td>OF-846352424</td>
+                                        <td>Buyer</td>
+                                        <td><a href="#">Yousef318</a></td>
+                                        <td>Uniswap Token</td>
+                                        <td>7</td>
+                                        <td>$103.89/unit</td>
+                                        <td>16/10/2021:12.23am</td>
+                                       
+                                    </tr>
+                                    <tr>
+                                        <td>2</td> 
+                                        <td>OF-846352424</td>
+                                        <td>Vendor</td>
+                                        <td><a href="#">Demola221</a></td>
+                                        <td>Bitcoin</td>
+                                        <td>1</td>
+                                        <td>$50000/unit</td>
+                                        <td>16/10/2021:12.23am</td>
+                                       
+                                    </tr>
+
+                                    <tr>
+                                        <td>3</td> 
+                                        <td>OF-846352424</td>
+                                        <td>Buyer</td>
+                                        <td><a href="#">Yousef318</a></td>
+                                        <td>Uniswap Token</td>
+                                        <td>7</td>
+                                        <td>$103.89/unit</td>
+                                        <td>16/10/2021:12.23am</td>
+                                       
+                                    </tr>
+
+                                    
+                              
+                            </tbody>
+    
+    
+    
+                        </table>
+
+                    </div>
+        </div> 
+    </div>
+
+</div>
+<router-outlet></router-outlet>

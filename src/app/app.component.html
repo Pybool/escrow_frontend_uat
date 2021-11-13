@@ -1,0 +1,48 @@
+<!-- <h1>Angular Courses</h1> -->
+<!-- <app-course></app-course> -->
+<!-- <app-login></app-login>
+<app-dashboard></app-dashboard> -->
+
+<h1>{{ getTitle() }}</h1>
+
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler9"
+        aria-controls="navbarToggler9" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+</button>
+
+<nav id="navbarToggler9" class="navbar navbar-expand-sm bg-dark">
+    <!-- Brand/logo -->
+    <label id="logo"  style="width:60px;height:50px;">  . </label>
+    <a class="navbar-brand" href="#">
+      
+    </a>
+    
+    <!-- Links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a  class="nav-link active" routerLink="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a  class="nav-link" routerLink="orderpool">Order Pool</a>
+      </li>
+      <li class="nav-item">
+        <a  class="nav-link" routerLink="Dashboard">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a  class="nav-link" routerLink="Seller dashboard">Seller dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a  class="nav-link" routerLink="Login">Login page</a>
+      </li>
+      <li class="nav-item">
+        <a  class="nav-link" routerLink="Register">Register</a>
+      </li>
+    </ul>
+  </nav>
+
+  
+
+<router-outlet></router-outlet>
+<footer></footer>
+
+

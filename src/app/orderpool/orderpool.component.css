@@ -1,0 +1,68 @@
+* {
+    font-family: "Times New Roman", Times, serif;
+    
+}
+
+#parent_div {
+    background-image: url('slide.jpg');
+    
+    background-color: #cccccc;
+    
+   }
+
+td,th {
+    text-align: center;
+  }
+  
+.pass {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.pass div div input {
+
+    outline: none;
+    border: 0.5px solid lightgray;
+    border-radius: 5px;
+    height: 40px;
+    padding: 10px 10px;
+}
+.pass div div input:focus {
+    border: 2px solid lightskyblue;
+}
+
+.pass div div input:hover {
+    border: 2px solid rgb(250, 135, 173);
+}
+
+.pass div div select:hover {
+    border: 2px solid rgb(51, 53, 101);
+}
+
+.no_dec{
+
+    text-decoration: none;
+}
+
+.no_dec_sm{
+
+    color: orange;
+}
+
+.no_dec_sm:hover{
+
+    color:rgb(250, 135, 173);
+    font-size: 16.3px;
+}
+
+.no_dec:hover{
+
+ 
+    font-size: 17px;
+}
+
+.no_exp:hover{
+
+ 
+    max-width: 132.5px;
+}

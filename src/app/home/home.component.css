@@ -1,0 +1,50 @@
+.round_div{
+    background-color: rgba(0, 0, 0,0.5);
+    border-radius: 20px;
+    color: rgb(120, 114, 114);
+
+
+
+}
+
+h2{
+
+
+    color:orange;
+}
+.bin{
+
+    background-color: rgba(0, 0, 0,0.1);
+    border-radius: 5px;
+    color:black;
+}
+
+.body{
+
+    background-color: rgba(127, 76, 76, 0.1);
+    
+}
+
+* {
+    font-family: "Times New Roman", Times, serif;
+    
+}
+
+#line{
+   height: 2px;
+}
+
+#line:hover{
+    background-color: steelblue;
+}
+
+#left{
+
+    padding-left: 5px;
+}
+.bin_cont{
+
+ 
+   border-radius: 5px;
+   margin: 5px;
+}

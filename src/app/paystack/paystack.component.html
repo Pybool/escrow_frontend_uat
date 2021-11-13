@@ -1,0 +1,22 @@
+<body id = "parent_div">
+      
+    <div  class="container"> 
+        <h1>Angular Escrow Payment Page</h1>   
+        <br>
+        <h5><b>Payment summary</b></h5>     
+        <table class="table table-dark table-striped">
+            <tr><td>Cryptocurrency seller fee</td> <td>&#8358;20,000</td></tr>
+            <tr><td>Escrow Service charge</td> <td>&#8358;350</td></tr>
+            <tr><td>VAT</td> <td>&#8358;50</td></tr>
+            <tr id="total"><td>Total</td> <td>&#8358;20,400</td></tr>
+        </table> 
+        <button class="btn btn-primary" onclick="payWithPaystack()"> Pay </button>
+        <p style="color:white;">Please note you have a maximum of 20 minutes to confirm or report the seller's service after which the seller will be paid.</p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script src="paystack.js"></script>
+
+
+</body>
+
