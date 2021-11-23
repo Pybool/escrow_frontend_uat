@@ -2,19 +2,30 @@
     <div class="row">
         <div class="col-sm-3.5 mx-auto">
             <div>
-                 
-                <form class="bin">
+                <alert align="left"></alert>
+                <form [formGroup]="form"  class="bin" #loginForm="ngForm" (ngSubmit)="loginForm.form.valid && onSubmit(loginForm)" novalidate >
                     <h2 style="color:white;" class="text-center">Angular Cryptocurrency Escrow login page</h2>
                     <hr style="background-color:white;">
          
                     <div class="email">
                         <b><label style="color:white;" class="" for="email">Email:</label></b>
-                        <input type="text" class="form-control" id='email' placeholder="Enter your email address"/>
-                        
+                        <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" placeholder="Enter your email address"/>
+                        <div class="alert-danger error" *ngIf="f.email.errors &&loginForm.submitted">
+                            <div class="error" *ngIf="f.email.errors.required">email is required</div>
+                            <div class="error" *ngIf="f.email.errors.email ">
+                             Invalid email
+                            </div>
+                           
+                        </div>
+
                     </div>
                     <div class="pass">
                         <b><label style="color:white;" for="password">Password:</label></b>
-                        <input type="password"  id='password' placeholder="Enter your password"/>
+                        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="Enter your password"/>
+                        <div class="alert-danger error" *ngIf="f.password.errors &&loginForm.submitted" >
+                            <div class="error" *ngIf="f.password.errors.required">Password is required</div>
+                            <div class="error" *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                        </div>
                         <br>
                         
                     </div>
@@ -22,6 +33,11 @@
                         <br>
                     <a href="#" class="text-center">Forgort password?</a>&nbsp;&nbsp;
                     <a href="http://localhost:4200/Register" class="text-center">Register</a>
+
+                    <div *ngIf="(f.email.invalid &amp;&amp; f.email.touched) || f.email.dirty">
+                        <small class="text-danger" *ngIf="f.email.errors?.required">Email address is required</small>
+                        <small class="text-danger" *ngIf="f.email.errors?.pattern">Email address is invalid</small>
+                    </div>
                   
                 </form>
 
@@ -31,4 +47,5 @@
     </div>
 
 </div>
+
 

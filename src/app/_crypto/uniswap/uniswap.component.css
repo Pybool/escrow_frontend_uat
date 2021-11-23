@@ -5,3 +5,11 @@
     border-color: steelblue;
     color: white;
 }
+
+.crypto:hover{
+    color: black !important;
+    /* max-width: 10px;
+    max-height: 10px; */
+   
+
+}

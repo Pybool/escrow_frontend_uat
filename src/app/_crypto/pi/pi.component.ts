@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-pi',
@@ -11,5 +14,18 @@ export class PiComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+}
+
+@NgModule({
+  declarations: [PiComponent],
+  exports: [PiComponent],
+  imports: [BrowserModule,]
+})
+export class PiComponentx { 
+
+  static components = {
+    lazy: PiComponent,
+  };
 
 }

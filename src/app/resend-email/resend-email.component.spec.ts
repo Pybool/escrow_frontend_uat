@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EkoModalComponent } from './eko-modal.component';
+import { ResendEmailComponent } from './resend-email.component';
 
-describe('EkoModalComponent', () => {
-  let component: EkoModalComponent;
-  let fixture: ComponentFixture<EkoModalComponent>;
+describe('ResendEmailComponent', () => {
+  let component: ResendEmailComponent;
+  let fixture: ComponentFixture<ResendEmailComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EkoModalComponent ]
+      declarations: [ ResendEmailComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EkoModalComponent);
+    fixture = TestBed.createComponent(ResendEmailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

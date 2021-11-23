@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 @Component({
   selector: 'app-bitcoin',
   templateUrl: './bitcoin.component.html',
@@ -13,3 +14,17 @@ export class BitcoinComponent implements OnInit {
   }
 
 }
+
+@NgModule({
+  declarations: [BitcoinComponent],
+  exports: [BitcoinComponent],
+  imports: [BrowserModule,]
+})
+export class BitcoinComponentx { 
+
+  static components = {
+    lazy: BitcoinComponent,
+  };
+
+}
+

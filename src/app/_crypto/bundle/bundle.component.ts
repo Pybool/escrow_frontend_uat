@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-bundle',
@@ -11,5 +13,18 @@ export class BundleComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+}
+
+@NgModule({
+  declarations: [BundleComponent],
+  exports: [BundleComponent],
+  imports: [BrowserModule,]
+})
+export class BundleComponentx { 
+
+  static components = {
+    lazy: BundleComponent,
+  };
 
 }

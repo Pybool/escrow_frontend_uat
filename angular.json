@@ -72,10 +72,12 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "gokage:build:production"
+              "browserTarget": "gokage:build:production",
+              "disableHostCheck": true
             },
             "development": {
-              "browserTarget": "gokage:build:development"
+              "browserTarget": "gokage:build:development",
+              "disableHostCheck": true
             }
           },
           "defaultConfiguration": "development"

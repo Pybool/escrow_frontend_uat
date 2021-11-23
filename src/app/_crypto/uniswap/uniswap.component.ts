@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-uniswap',
@@ -11,5 +13,18 @@ export class UniswapComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+}
+
+@NgModule({
+  declarations: [UniswapComponent],
+  exports: [UniswapComponent],
+  imports: [BrowserModule,]
+})
+export class UniswapComponentx { 
+
+  static components = {
+    lazy: UniswapComponent,
+  };
 
 }

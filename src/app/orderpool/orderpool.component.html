@@ -37,8 +37,9 @@
                         
                     </div>
  
-                    <div style="padding-left:20px; max-height: 500px; overflow: auto; opacity:0.8;">
-                        <table style=" min-width:1500px; height: 600px; " class="table table-dark table-striped table-bordered ">
+                    <div style="padding-left:20px; max-height: 650px; overflow: auto; opacity:0.8;">
+                        
+                        <table  style=" min-width:1500px; height: 700px; " class="table table-dark table-striped table-bordered ">
                             <thead style="background-color:#2C3539;color:white;">
     
                                 <th>
@@ -64,25 +65,74 @@
                                     Action
                                 </th>
                             </thead>
-                            <tbody>
-                               
-                                   <tr *ngFor="let order of orders; let i=index;">
+                            
+                            
+                            <tbody *ngIf="!loading">
+                                
+                                   <tr *ngFor="let order of orders; let i=index; ">
                                         <td>{{i+1}}</td>
                                         <td><a class="no_dec_sm"  href="#"> 
                                             <div class="no_exp">{{order.order_id}}</div></a>
                                        
                                         </td>
                                         
-                                        <td><a class="no_dec" style="color: white; text-align: left;" href=""><app-ethereum></app-ethereum></a></td>
-                                        <td>{{order.qty}}</td>
-                                        <td>{{order.price}}</td>
-                                        <td>{{order.expire}}</td>
-                                        <td><input type="button" value="Reserve order" class="btn btn-success "/></td>
+                                        <td *ngIf="order.commodity=='btc' && loaded">
+                                            
+                                                <ng-container *ngComponentOutlet="bitcoin"></ng-container>
+                                          
+                                        </td>
+                                        <td *ngIf="order.commodity=='eth'">
+                                            <div *ngIf="loaded">
+                                                <ng-container *ngComponentOutlet="ethereum"></ng-container>
+                                            </div>
+                                        </td>
+                                        <td *ngIf="order.commodity=='bch'">
+                                            <div *ngIf="loaded">
+                                                <ng-container *ngComponentOutlet="bcash"></ng-container>
+                                            </div>
+                                        </td>
+                                        <td *ngIf="order.commodity=='bnb'">
+                                            <div *ngIf="loaded">
+                                                <ng-container *ngComponentOutlet="bnb"></ng-container>
+                                            </div>
+                                        </td>
+                                        <td *ngIf="order.commodity=='pi'">
+                                            <div *ngIf="loaded">
+                                                <ng-container *ngComponentOutlet="pi"></ng-container>
+                                            </div>
+                                        </td>
+                                        <td *ngIf="order.commodity=='bndl'">
+                                            <div *ngIf="loaded">
+                                                <ng-container *ngComponentOutlet="bundle"></ng-container>
+                                            </div>
+                                        </td>
+                                        <td *ngIf="order.commodity=='uni'">
+                                            <div *ngIf="loaded">
+                                                <ng-container *ngComponentOutlet="uniswap"></ng-container>
+                                            </div>
+                                        </td>
+                                        <td *ngIf="order.commodity=='ltc'">
+                                            <div *ngIf="loaded">
+                                                <ng-container *ngComponentOutlet="litecoin"></ng-container>
+                                            </div>
+                                        </td>
+                                        <td>{{order.quantity}}</td>
+                                        <td>${{order.price}}/unit{{86400-(timestamp - (order.timestamp))}}</td>
+                                        <td *ngIf="order.expire !=0">
+                                            <countdown (event)="onTimerFinished($event,i)" #countdown [config]="{leftTime:86400-(timestamp - order.timestamp)}"></countdown>
+                                        </td>
+                                        <!-- <td>3min:56s</td> -->
+                                        <td><input id= {{i}} type="button" value="Reserve order" class="btn btn-success "/></td>
                                     </tr>
+                                    <!-- Subtract the difference of the timestamp in seconds from 24*3600 seconds -->
 
-                                   
-                            
                             </tbody>
+                            <div style="position: fixed; top: 50%; left: 50%;" align="center" *ngIf="loading">
+                                <span style="position: fixed; top: 50%; left: 45%; width: 90px;height: 90px;" *ngIf="loading" class="spinner-border text-warning"></span>
+                                &nbsp;&nbsp;
+                                <span style="position: fixed; top: 50%; left: 45%; width: 90px;height: 90px;" *ngIf="loading" class="spinner-border text-warning"></span>
+    
+                            </div>
 
                         </table>
   

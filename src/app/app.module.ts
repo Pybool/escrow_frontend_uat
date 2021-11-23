@@ -1,8 +1,11 @@
-import { CourseService } from './course/course.service';
-import { NgModule } from '@angular/core';
+import { AuthService } from './_services/auth.service';
+import { ReservationService } from './_services/reservation.service';
+import {ServiceLocator} from './locator.service';
+import { Injector,NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 import { CourseComponent } from './course/course.component';
 import { LoginComponent } from './authentication/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -10,19 +13,17 @@ import { SellerdashboardComponent } from './sellerdashboard/sellerdashboard.comp
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './authentication/register/register.component';
 import { OrderpoolComponent } from './orderpool/orderpool.component';
-import { EthereumComponent } from './_crypto/ethereum/ethereum.component';
-import { BitcoinComponent } from './_crypto/bitcoin/bitcoin.component';
-import { UniswapComponent } from './_crypto/uniswap/uniswap.component';
-import { PiComponent } from './_crypto/pi/pi.component';
-import { LitecoinComponent } from './_crypto/litecoin/litecoin.component';
-import { BnbComponent } from './_crypto/bnb/bnb.component';
-import { BundleComponent } from './_crypto/bundle/bundle.component';
-import { BchComponent } from './bch/bch.component';
 import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EkoModalComponent } from './eko-modal/eko-modal.component';
 import { PaystackComponent } from './paystack/paystack.component';
-
-
+import { AccountprofileComponent } from './accountprofile/accountprofile.component';
+import { ResendEmailComponent } from './resend-email/resend-email.component';
+import { SucessTickComponent } from './sucess-tick/sucess-tick.component';
+import { AlertComponent } from './_alert/alert.component';
+import { FuckComponent } from './fuck/fuck.component';
+import { CountdownModule } from 'ngx-countdown';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TimerComponent } from './timer/timer.component';
 
 @NgModule({
   declarations: [
@@ -34,23 +35,30 @@ import { PaystackComponent } from './paystack/paystack.component';
     HomeComponent,
     RegisterComponent,
     OrderpoolComponent,
-    EthereumComponent,
-    BitcoinComponent,
-    UniswapComponent,
-    PiComponent,
-    LitecoinComponent,
-    BnbComponent,
-    BundleComponent,
-    BchComponent,
     EkoModalComponent,
-    PaystackComponent
+    PaystackComponent,
+    AccountprofileComponent,
+    ResendEmailComponent,
+    SucessTickComponent,
+    AlertComponent,
+    FuckComponent,
+    TimerComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    CountdownModule
   ],
-  providers: [CourseService,NgbActiveModal],
+  providers: [AuthService,ReservationService,NgbActiveModal],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private injector: Injector){    // Create global Service Injector.
+    ServiceLocator.injector = this.injector;
+}
+ }

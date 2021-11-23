@@ -1,3 +1,4 @@
+
 <div id="header" class="modal-header">
     <!-- <h5 class="modal-title">Eko-Modal title</h5> -->
     <h2 style="color:white;" class="text-center">Angular Escrow Publish Order</h2>
@@ -9,33 +10,74 @@
     <div id='parent_div' class="container-fluid">
         <div class="row">
             <div class="col-sm-3.5 mx-auto">
-    
-            <form>
+                
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
                 
                 <h5 style="color:white;" class="modal-title">Publish a new order to the Orderpool for Sellers</h5>
+                <alert></alert>
                 <br>
                 <div class="pass">
                     <b><label style="color:white;" for="Commodity">Commodity:</label></b>
                     <!-- <input type="text"  id='Commodity' placeholder="Enter the Commodity"/>
                     <br> -->
                   
-                    <div class="dropdown">
-                        <button  type="button" class="col-sm-12 btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                          Commodity
-                        </button>
+                    <div  class="dropdown">
+                        <button type="button" class="col-sm-12 btn btn-primary " data-toggle="dropdown">{{ Cryptocurrency }}
+                            <div *ngIf="loaded">
+                                 <ng-container *ngComponentOutlet="publicmyComponent"></ng-container>
+                             </div><label *ngIf="!display" style="color:whitesmoke;" >&#9660;</label>
+                             
+                         </button>
+
+                         <!-- <button *ngIf="!loaded" (click)="load()">Load</button> -->
+                            
+                                                
                         
 
                             <div style="background-color: #2C3539;  height:250px;overflow:auto;" class="col-sm-12 dropdown-menu">
                                 <div style="height:300px;">
 
-                                    <a class="dropdown-item"> <app-bitcoin class="crypto_hover" style="max-width: 10px; color:white; max-height: 10px;"></app-bitcoin></a>
-                                    <a class="dropdown-item"><app-ethereum class="crypto_hover" style="max-width: 10px; color:white; max-height: 10px;"></app-ethereum></a>
-                                    <a class="dropdown-item"><app-uniswap class="crypto_hover" style="max-width: 10px; color:white; max-height: 10px;"></app-uniswap></a>
-                                    <a class="dropdown-item"> <app-bnb class="crypto_hover" style="max-width: 10px; color:white; max-height: 10px;"></app-bnb></a>
-                                    <a class="dropdown-item"><app-litecoin class="crypto_hover" style="max-width: 10px; color:white; max-height: 10px;"></app-litecoin></a>
-                                    <a class="dropdown-item"><app-pi class="crypto_hover" style="max-width: 10px; color:white; max-height: 10px;"></app-pi></a>
-                                    <a class="dropdown-item"> <app-bundle class="crypto_hover" style="max-width: 10px; color:white; max-height: 10px;"></app-bundle></a>
-                                    <a class="dropdown-item"> <app-bch class="crypto_hover" style="max-width: 10px; color:white; max-height: 10px;"></app-bch></a>
+                                    <a *ngIf="childloaded" (click)="cryptovalue('btc')" class="dropdown-item">
+                                        <div >
+                                            <ng-container *ngComponentOutlet="btcmyComponent"></ng-container>
+                                        </div>
+                                    </a>
+                                    <a *ngIf="childloaded" (click)="cryptovalue('eth')" class="dropdown-item">
+                                        <div >
+                                            <ng-container *ngComponentOutlet="ethmyComponent"></ng-container>
+                                        </div>
+                                    </a>
+                                    <a *ngIf="childloaded" (click)="cryptovalue('uni')" class="dropdown-item">
+                                        <div >
+                                            <ng-container *ngComponentOutlet="unimyComponent"></ng-container>
+                                        </div>
+                                    </a>
+
+                                    <a *ngIf="childloaded" (click)="cryptovalue('bnb')" class="dropdown-item">
+                                        <div >
+                                            <ng-container *ngComponentOutlet="bnbmyComponent"></ng-container>
+                                        </div>
+                                    </a>
+                                    <a *ngIf="childloaded" (click)="cryptovalue('ltc')" class="dropdown-item">
+                                        <div >
+                                            <ng-container *ngComponentOutlet="ltcmyComponent"></ng-container>
+                                        </div>
+                                    </a>
+                                    <a *ngIf="childloaded" (click)="cryptovalue('pi')" class="dropdown-item">
+                                        <div >
+                                            <ng-container *ngComponentOutlet="pimyComponent"></ng-container>
+                                        </div>
+                                    </a>
+                                    <a *ngIf="childloaded" (click)="cryptovalue('bndl')" class="dropdown-item"> 
+                                        <div >
+                                            <ng-container *ngComponentOutlet="bndlmyComponent"></ng-container>
+                                        </div>
+                                    </a>
+                                    <a *ngIf="childloaded" (click)="cryptovalue('bch')" class="dropdown-item"> 
+                                        <div >
+                                            <ng-container *ngComponentOutlet="bchmyComponent"></ng-container>
+                                        </div>
+                                    </a>
           
                                     <!-- <a class="dropdown-item"> <app-bitcoin style="max-width: 10px; max-height: 10px;"></app-bitcoin></a>
                                     <a class="dropdown-item"><app-ethereum style="max-width: 10px; max-height: 10px;"></app-ethereum></a>
@@ -58,14 +100,14 @@
     
                 <div class="pass">
                     <b><label style="color:white;" for="Quantity">Quantity:</label></b>
-                    <input type="text"  id='Quantity' placeholder="Enter your Quantity"/>
+                    <input formControlName="qty" type="text"  id='Quantity' placeholder="Enter your Quantity"/>
                     <br>
                     
                 </div>
     
                 <div class="pass">
                     <b><label style="color:white;" for="Price">Price:</label></b>
-                    <input type="text"  id='Price' placeholder="Enter your Price"/>
+                    <input formControlName="price" type="text"  id='Price' placeholder="Enter your Price"/>
                     <br>
                     
                 </div>

@@ -1,0 +1,41 @@
+
+
+ <div id='parent_div' class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3.5 mx-auto">
+        <alert></alert>
+        <form [formGroup]="form"  #accountProfileForm="ngForm" (ngSubmit)="accountProfileForm.form.valid && onSubmit(accountProfileForm)" novalidate>
+            <h2 style="color:white;" class="text-center">Cryptocurrency Escrow Account verification</h2>
+            <hr style="background-color:white;">
+           
+            <b><label style="color:white;" for="seller">Account details:</label></b>
+            <div class="pass">
+                
+                <input  formControlName = "search" style="color: black;" type="text"  id='searchbanks' placeholder="Search more banks" />
+                <select  style="background-color: #2C3539;color:white;" class="form-control" formControlName = "bankname" >
+                    <option *ngFor="let bank of banks | slice:0:30; let i=index"  id="bank.code" [value]="bank.name+'@'+bank.code">{{bank.name}}</option> 
+                </select>
+            </div>
+            
+
+            <div class="pass">
+                
+                <input  formControlName = "accountname" style="color: black;" type="text"  id='acc_name' placeholder="Enter account name" required/>
+                
+            </div>
+            <div class="pass">
+                
+                <input formControlName = "accountno" style="color: black;" type="text"  id='acc_no' placeholder="Enter Account number" required/>
+            </div>
+            <br>
+            <p><input type="submit" style="min-width: 200px;" type="submit" class="btn btn-primary text-center" value="Verify Account">&nbsp;&nbsp; &nbsp;&nbsp;<span style="width: 25px;height: 25px;background-color: orange;" *ngIf="loading" class="spinner-grow text-warning"></span>&nbsp;&nbsp;<span style="width: 25px;height: 25px;background-color: orange;" *ngIf="loading" class="spinner-grow text-warning"></span></p>
+            
+            <p style="color: white;" >Please be patient, this could take up to 20 seconds depending on your internet connectivity</p>
+
+            
+          
+        </form>
+        </div>
+    </div>
+
+</div>
