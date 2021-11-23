@@ -20,7 +20,6 @@ import { AccountprofileComponent } from './accountprofile/accountprofile.compone
 import { ResendEmailComponent } from './resend-email/resend-email.component';
 import { SucessTickComponent } from './sucess-tick/sucess-tick.component';
 import { AlertComponent } from './_alert/alert.component';
-import { FuckComponent } from './fuck/fuck.component';
 import { CountdownModule } from 'ngx-countdown';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TimerComponent } from './timer/timer.component';
@@ -41,7 +40,6 @@ import { TimerComponent } from './timer/timer.component';
     ResendEmailComponent,
     SucessTickComponent,
     AlertComponent,
-    FuckComponent,
     TimerComponent
     
   ],
